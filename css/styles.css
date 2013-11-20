@@ -11,6 +11,10 @@
 	width: 960px;
 }
 
+/* Push down content below navigation */
+article {
+	padding-top: 200px;
+}
 
 /*==============================
 	Logo
@@ -55,7 +59,7 @@ header ul {
 }
 
 /* Push links far right w/o floats */
-nav li {
+nav li:nth-child(1) {
 	margin-left: 450px;
 }
 
@@ -77,14 +81,14 @@ nav a:visited {
 	color: #fff;
 	height: 64px;
 	display: block;
-
+	line-height: 64px;
 	text-align: center;	
 	text-decoration: none;
 	text-transform: uppercase;
 	width: 128px;
 	
 	/*CSS 3*/
-
+	transition: margin-top .5s;
 }
 
 nav a:hover, 
