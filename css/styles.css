@@ -1,7 +1,9 @@
 /*==============================
 	Global
 ==============================*/
-
+p{
+	line-height: 1.5em;
+}
 
 /*==============================
 	Structure & Layout 
@@ -55,7 +57,7 @@ header li {
 
 /* Remove inherited margin on <ul> */
 header ul {
-
+	margin: 0px;
 }
 
 /* Push links far right w/o floats */
@@ -81,7 +83,7 @@ nav a:visited {
 	color: #fff;
 	height: 64px;
 	display: block;
-	
+	line-height: 64px;
 	text-align: center;	
 	text-decoration: none;
 	text-transform: uppercase;
@@ -126,10 +128,10 @@ nav a:active {
 	Students Page
 ==============================*/
 .members li {
-
+	float: left;
 	list-style: none;
 	margin: 20px 0 0 20px;
-
+	position: relative;
 	width: 440px;
 }
 
@@ -139,14 +141,14 @@ nav a:active {
 	color: #fff;
 	left: -20px;
 	padding: 10px;
-
+	position: absolute;
 	
 	/* CSS 3*/
 
 }
 
 /* Ribbon Triangle */
-.members h3:after {
+.members h3:before {
 	content: "";
 	position: absolute;
 	display: block;
@@ -155,6 +157,7 @@ nav a:active {
 	border-color: #333 transparent transparent transparent;
 	bottom: -39px;
 	border-width: 20px;
+	z-index:-1;
 
 }
 
