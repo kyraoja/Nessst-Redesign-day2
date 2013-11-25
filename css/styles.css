@@ -1,9 +1,22 @@
 /*==============================
 	Global
 ==============================*/
-p{
-	line-height: 1.5em;
+p {
+	line-height: 24px;
 }
+
+/*Lane Narrow font*/
+@font-face {
+    font-family: 'lane_-_narrowregular';
+    src: url('../fonts/LANENAR_-webfont.eot');
+    src: url('../fonts/LANENAR_-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/LANENAR_-webfont.woff') format('woff'),
+         url('../fonts/LANENAR_-webfont.ttf') format('truetype'),
+         url('../fonts/LANENAR_-webfont.svg#lane_-_narrowregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /*==============================
 	Structure & Layout 
@@ -31,10 +44,10 @@ header h1 a {
 	position: absolute;
 	text-indent: -999em;
 	width: 150px;
-	z-index: 1;
+	z-index: 2;
 	
 	/* CSS 3*/
-	transition: background 1s;
+	transition: background-color 1s;
 }
 
 header h1 a:hover {
@@ -57,7 +70,7 @@ header li {
 
 /* Remove inherited margin on <ul> */
 header ul {
-	margin: 0px;
+	margin: 0;
 }
 
 /* Push links far right w/o floats */
@@ -77,7 +90,6 @@ nav {
 	box-shadow: inset 0px 0px 10px 2px #333;
 }
 
-
 nav a:link,
 nav a:visited {
 	color: #fff;
@@ -90,9 +102,7 @@ nav a:visited {
 	width: 128px;
 	
 	/*CSS 3*/
-	-moz-transition: margin-top .5s;
-	-webkit-transition: margin-top .5s;
-	transition: margin-top .5s;
+	transition: margin-top .25s;
 }
 
 nav a:hover, 
@@ -100,13 +110,19 @@ nav a:active {
 	margin-top: 10px;
 }
 
+/*students icon*/
+nav li:nth-child(2) a {
+	background: url("../img/spritemap.png") no-repeat left center;
+	
+}
+	
 
 /*==============================
 	Navigation: Page Indicators
 ==============================*/
-.about li:nth-child(1) a, 
-.students li:nth-child(2) a,
-.contact li:nth-child(3) a{
+.about li:nth-child(1), 
+.students li:nth-child(2),
+.contact li:nth-child(3){
 	background: rgba(255,255,255,.15);
 }
 
@@ -121,8 +137,11 @@ nav a:active {
 }
 
 .about section h2 {
+	font-family: 'lane_-_narrowregular', sans-serif;
 	margin-left: -40px;
 }
+
+
 
 /*==============================
 	Students Page
@@ -144,11 +163,11 @@ nav a:active {
 	position: absolute;
 	
 	/* CSS 3*/
-
+	box-shadow: 0 10px 20px #222;
 }
 
 /* Ribbon Triangle */
-.members h3:before {
+.members h3:after {
 	content: "";
 	position: absolute;
 	display: block;
@@ -157,8 +176,8 @@ nav a:active {
 	border-color: #333 transparent transparent transparent;
 	bottom: -39px;
 	border-width: 20px;
-	z-index:-1;
-
+	z-index: -1;
+	
 }
 
 .members img {
@@ -184,5 +203,46 @@ nav a:active {
 }
 
 label {
+	display: block;
+}
 
+/*==============================
+	Gallery Page
+==============================*/
+.gallery .control-button {
+  color: #ccc;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.gallery .control-button:hover {
+  color: white;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+/*
+	Theme controls how everything looks in Gallery CSS.
+*/
+.gallery {
+  position: relative;
+}
+.gallery .item {
+  height: 400px;
+  overflow: hidden;
+  text-align: center;
+  background: #4d87e2;
+}
+.gallery .controls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.gallery .control-button {
+  display: inline-block;
+  margin: 0 .02em;
+  font-size: 3em;
+  text-align: center;
+  text-decoration: none;
+  transition: color .1s;
 }
